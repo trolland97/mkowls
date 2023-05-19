@@ -22,6 +22,15 @@
     <!-- custom css link -->
     <link rel="stylesheet" href="css/style.css">
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("jy5dAyQVfksyciumh");
+        })();
+    </script>
+
 </head>
 
 <body>
@@ -30,7 +39,7 @@
 
     <header>
         <div class="container">
-            <a href="" class="logo"><span>M</span>k<span> O</span>wls.</a>
+            <a href="index.html" class="logo"><span>M</span>k<span> O</span>wls.</a>
 
             <nav class="nav">
                 <ul>
@@ -54,10 +63,10 @@
 
         <div class="container">
 
-            <div class="row min-vh-100 align-items-center text-center text-md-right pt-5">
+            <div class="row min-vh-100 align-items-center text-center text-md-right pt-5 pb-5">
 
                 <div class="col-md-6 pr-md-5 pt-5" data-aos="zoom-in">
-                    <img src="images/home-img1.svg" width="100%" alt="">
+                    <img src="images/home-img2.svg" width="100%" alt="">
                 </div>
 
                 <div class="col-md-6 pl-md-5 pt-5 content" data-aos="fade-left">
@@ -248,7 +257,7 @@
 
         <div class="container">
 
-            <h1 class="heading"><span>'</span> Naš tim u brojkama <span>'</span></h1>
+            <h1 class="heading"><span>'</span> Naš tim <span>'</span></h1>
 
             <div class="box-container">
 
@@ -290,17 +299,19 @@
 
                 <div class="col-md-10" data-aos="flip-down">
 
-                    <form action="send-email.php" method="POST">
+                    <form>
 
-                        <div class="inputBox">
-                            <input type="text" name="name" placeholder="Ime i Prezime" required>
-                            <input type="text" name="email" placeholder="E-mail" required>
-                            <input type="text" name="subject" placeholder="Subject" required>
+                        <div class="form-group" id="inputBox">
+                            <input type="text" class="form-control" id="name" placeholder="Ime i Prezime" />
+                            <input type="email" class="form-control" id="email" placeholder="E-mail adresa" />
                         </div>
 
-                        <textarea name="message" id="" cols="30" rows="10" placeholder="message (optional)"></textarea>
+                        <div class="form-group" id="text">
+                            <textarea class="form-control" id="message" cols="30" rows="10"
+                                placeholder="Unesite svoju poruku"></textarea>
+                        </div>
 
-                        <input type="submit" name="" id="" value="SEND" class="button">
+                        <input type="submit" value="SEND" onclick="sendMail()" class="button">
                         <input type="reset" value="DELETE" class="button">
 
                     </form>
@@ -350,6 +361,30 @@
 
     <!-- adress section ends -->
 
+    <!-- partners section starts -->
+
+    <section class="partners">
+
+        <h1 class="heading"><span>'</span> Naši partneri <span>'</span></h1>
+
+        <div class="logos">
+
+            <div class="logos-slide">
+                <a href="tel:+381604017620"><img src="images/logos/ran.png" /></a>
+                <a href="tel:+381604017620"><img src="images/logos/ran.png" /></a>
+                <a href="tel:+381604017620"><img src="images/logos/ran.png" /></a>
+                <a href="tel:+381604017620"><img src="images/logos/ran.png" /></a>
+                <a href="tel:+381604017620"><img src="images/logos/ran.png" /></a>
+                <a href="tel:+381604017620"><img src="images/logos/ran.png" /></a>
+                <a href="tel:+381604017620"><img src="images/logos/ran.png" /></a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- partnes section ends -->
+
     <!-- footer section starts -->
 
     <section class="footer pt-3">
@@ -360,8 +395,7 @@
 
                 <div class="col-md-4" data-aos="fade-right">
                     <a href="" class="logo"><span>M</span>k<span> O</span>wls.</a>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo nemo dolor provident iste
-                        molestiae amet suscipit dicta similique, consectetur debitis!</p>
+                    <p>Moto klub OWLS je osnovan 2020 godine.</p>
                 </div>
 
                 <div class="col-md-4 text-center" data-aos="fade-up">
@@ -387,7 +421,7 @@
 
         </div>
 
-        <h1 class="credit text-center mx-auto">created by <span>Roland Webdesign <span id="yearFooter"></span></span> @
+        <h1 class="credit text-center mx-auto">created by <span> RAN Webdesign <span id="yearFooter"></span></span> @
             all rights
             reserved.
         </h1>
@@ -412,6 +446,13 @@
     <!-- js cdn link -->
     <script src="js/main.js"></script>
 
+    <!-- mail js link -->
+    <script src="js/mail.js"></script>
+
+    <script>
+        var copy = document.querySelector(".logos-slide").cloneNode(true);
+        document.querySelector(".logos").appendChild(copy);
+    </script>
 
     <script>
         AOS.init({

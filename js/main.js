@@ -28,3 +28,4 @@ $(document).ready(function(){
     document.getElementById("yearFooter").innerHTML = d.getFullYear();
 
 });
+

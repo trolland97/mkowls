@@ -165,7 +165,7 @@ header .fa-times{
 }
 
 .about .content .box{
-    margin: 3rem 0;
+    margin: 6rem 0;
     text-align: center;
 }
 
@@ -183,6 +183,10 @@ header .fa-times{
     font-size: 1.7rem;
     padding-left: 6rem;
     color: #666;
+}
+
+.about .col-md-6 img {
+    height: 500px;
 }
 
 .gallery {
@@ -316,13 +320,13 @@ header .fa-times{
     text-align: center;
 }
 
-.contact form .inputBox{
+.contact form #inputBox{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.contact form .inputBox input{
+.contact form #inputBox input{
     height: 4rem;
     width: 49%;
     padding: 0 1rem;
@@ -332,7 +336,7 @@ header .fa-times{
     text-transform: none;
 }
 
-.contact form textarea{
+.contact form #text textarea{
     height: 20rem;
     resize: none;
     padding: 1rem;
@@ -377,6 +381,51 @@ header .fa-times{
 .contact form input[type="submit"]:hover{
     background: var(--black);
 }
+
+.contact form input[type="reset"]:hover{
+    background: var(--black);
+}
+
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logos {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .logos:hover .logos-slide {
+    animation-play-state: paused;
+  }
+  
+  .logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+  }
+  
+  .logos-slide img {
+    height: 175px;
+    margin: 0 40px;
+  }
 
 .footer {
     background: var(--black);
@@ -493,6 +542,10 @@ header .fa-times{
     }
 
     .contact form input[type="submit"]{
+        width: 100%;
+    }
+
+    .contact form input[type="reset"]{
         width: 100%;
     }
 
